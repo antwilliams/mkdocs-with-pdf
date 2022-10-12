@@ -20,10 +20,6 @@ RUN apk --update --upgrade --no-cache add fontconfig ttf-freefont terminus-font 
     && fc-cache -f \
     && fc-list | sort
 
-# Set working directory and User
-RUN addgroup -g 1000 -S mkdocs && \
-    adduser -u 1000 -S mkdocs -G mkdocs
-USER mkdocs
 WORKDIR /docs
 
 # Expose MkDocs development server port
